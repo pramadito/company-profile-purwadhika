@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { DribbbleIcon, TwitchIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
 const teamMembers = [
   {
     name: "John Doe",
@@ -60,9 +61,10 @@ const teamMembers = [
       "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
 ];
-const Team04Page = () => {
+
+const Team05Page = () => {
   return (
-    <div className="flex flex-col justify-center py-8 sm:py-16 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
+    <div className="flex flex-col justify-center py-8 sm:py-12 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
       <div className="text-center max-w-2xl mx-auto">
         <b className="text-center text-muted-foreground text-base font-semibold">
           We&apos;re hiring!
@@ -81,32 +83,48 @@ const Team04Page = () => {
           </Button>
         </div>
       </div>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-12">
+
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
         {teamMembers.map((member) => (
-          <div
-            key={member.name}
-            className="flex flex-col items-center text-center bg-accent py-8 px-6 rounded-lg"
-          >
+          <div key={member.name}>
             <Image
               src={member.imageUrl}
               alt={member.name}
-              className="shrink-0 h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover bg-accent"
-              width={120}
-              height={120}
+              className="w-full aspect-square rounded-lg object-cover bg-secondary"
+              width={600}
+              height={600}
             />
-            <h3 className="mt-5 text-lg font-semibold">{member.name}</h3>
+            <h3 className="mt-4 text-lg font-semibold">{member.name}</h3>
             <p className="text-muted-foreground text-sm">{member.title}</p>
-            <p className="mt-2 mb-6">{member.bio}</p>
-            <div className="mt-auto flex items-center gap-4">
-              <Link href="#" target="_blank">
-                <TwitterIcon className="stroke-muted-foreground h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <DribbbleIcon className="stroke-muted-foreground h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <TwitchIcon className="stroke-muted-foreground h-5 w-5" />
-              </Link>
+            <p className="mt-3">{member.bio}</p>
+            <div className="mt-4 flex items-center gap-2.5">
+              <Button
+                className="bg-accent hover:bg-accent text-muted-foreground shadow-none"
+                size="icon"
+                asChild
+              >
+                <Link href="#" target="_blank">
+                  <TwitterIcon className="stroke-muted-foreground" />
+                </Link>
+              </Button>
+              <Button
+                className="bg-muted hover:bg-muted text-muted-foreground shadow-none"
+                size="icon"
+                asChild
+              >
+                <Link href="#" target="_blank">
+                  <DribbbleIcon className="stroke-muted-foreground" />
+                </Link>
+              </Button>
+              <Button
+                className="bg-muted hover:bg-muted text-muted-foreground shadow-none"
+                size="icon"
+                asChild
+              >
+                <Link href="#" target="_blank">
+                  <TwitchIcon className="stroke-muted-foreground" />
+                </Link>
+              </Button>
             </div>
           </div>
         ))}
@@ -114,6 +132,5 @@ const Team04Page = () => {
     </div>
   );
 };
-export default Team04Page;
 
-// https://www.shadcnui-blocks.com/blocks/categories/team
+export default Team05Page;

@@ -2,22 +2,20 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import * as Yup from "yup";
 import axios, { AxiosError } from "axios";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Wrench } from "lucide-react";
+import * as Yup from "yup";
+import useRegister from "./_hooks/useRegister";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required").min(3),
@@ -25,9 +23,8 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required("Password is required").min(6),
 });
 
-const Register = () => {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+const SignUp = () => {
+  const {mutateAsync : register, isPending} = useRegister();
 
   return (
     <main className="container mx-auto">
@@ -36,30 +33,9 @@ const Register = () => {
           initialValues={{ name: "", email: "", password: "" }}
           validationSchema={validationSchema}
           onSubmit={async (values) => {
-            setIsLoading(true);
-            try {
-              const url =
-                "https://deluxefarm-us.backendless.app/api/users/register";
-              const body = {
-                name: values.name,
-                email: values.email,
-                password: values.password,
-              };
-
-              await axios.post(url, body);
-              console.log(values);
-              alert(
-                `Register berhasil ${values.name} ${values.email} ${values.password}`
-              );
-              router.push("/login");
-            } catch (error) {
-              if (error instanceof AxiosError) {
-                alert(error.response?.data.message);
-              }
-            } finally {
-              setIsLoading(false);
-            }
+            await register(values);
           }}
+            
         >
           <Form className="space-y-4">
             <CardHeader>
@@ -118,8 +94,8 @@ const Register = () => {
               </div>
             </CardContent>
             <CardFooter className="flex-col gap-2">
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? <Wrench className="animate-spin" /> : "Register"}
+              <Button type="submit" className="w-full" disabled={isPending}>
+                {isPending ? <Wrench className="animate-spin" /> : "Register"}
               </Button>
             </CardFooter>
           </Form>
@@ -129,4 +105,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;
