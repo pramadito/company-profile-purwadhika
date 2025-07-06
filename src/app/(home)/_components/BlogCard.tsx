@@ -20,7 +20,7 @@ const BlogCard: FC<BlogCardProps> = ({ blog }) => {
     <Link href={`/blogs/${blog.objectId}`}>
     <Card>
       <CardHeader>
-        <div className="relative w-full h-[200px] rounded-lg overflow-hidden">
+        <div className="relative w-full h-[200px] rounded-lg overflow-hidden z-0">
           <Image
             src={blog.thumbnail}
             alt="thumbnail"

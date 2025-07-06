@@ -23,7 +23,7 @@ const BlogHeader: FC<BlogHeaderProps> = async ({ objectId }) => {
         <Image
           src={blog.thumbnail}
           alt="thumbmnail"
-          className="object-cover"
+          className="relative -z-10 object-cover"
           fill
         />
       </div>
