@@ -1,113 +1,76 @@
-import { Separator } from "@/components/ui/separator";
-
-const Casestudies = () => {
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  BookCheck,
+  ChartPie,
+  FolderSync,
+  Goal,
+  Users,
+  Zap,
+} from "lucide-react";
+import Image from "next/image";
+const features = [
+  {
+    icon: Goal,
+    title: "Paspor Diplomatik dan Dinas",
+    description:
+      "Pelayanan pengurusan paspor diplomatik dan dinas untuk keperluan resmi pemerintah.",
+    image: "/services/passport.png"
+  },
+  {
+    icon: BookCheck,
+    title: "Exit Permit dan Rekomendasi Visa",
+    description:
+      "Proses pengajuan exit permit dan rekomendasi visa untuk perjalanan dinas ke luar negeri.",
+      image: "/services/visa.png"
+  },
+  {
+    icon: ChartPie,
+    title: "Legalisasi Dokumen",
+    description:
+      "Pelayanan legalisasi dokumen resmi untuk keperluan internasional dan administrasi.",
+      image: "/services/dokumen.png"
+  },
+  {
+    icon: Users,
+    title: "Safe Travel",
+    description:
+      "Layanan konsultasi dan informasi keamanan perjalanan untuk diplomat dan pejabat pemerintah.",
+      image: "/services/safe-travel.png"
+  },
+  
+];
+const Products = () => {
   return (
-    <section className="py-32">
-      <div className="container">
-        <div className="flex flex-col gap-6 text-center">
-          <p className="font-medium">4500+ Satisfied Customers</p>
-          <h2 className="text-4xl font-medium md:text-5xl">
-            Real results from real users
-          </h2>
-        </div>
-        <div className="mt-20">
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="flex flex-col gap-10 border-border sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                alt="placeholder"
-                className="aspect-29/35 h-full w-full max-w-60 rounded-2xl object-cover"
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <q className="sm:text-xl">
-                  This productivity tool transformed how we collaborate. Our
-                  team's workflow improved dramatically, and we've cut meeting
-                  time by half while increasing output.
-                </q>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lg font-semibold text-primary">
-                      Michael Rivera
-                    </p>
-                    <p className="text-muted-foreground">Product Director</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg"
-                    alt="logo"
-                  />
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="max-w-screen-lg w-full py-10 px-6">
+        <h2 className="text-4xl md:text-5xl md:leading-[3.5rem] font-bold tracking-tight sm:max-w-xl sm:text-center sm:mx-auto">
+          Layanan Kami
+        </h2>
+        <div className="mt-8 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
+          {features.map((feature) => (
+            <Card
+              key={feature.title}
+              className="flex flex-col border rounded-xl overflow-hidden shadow-none"
+            >
+              <CardHeader>
+                <feature.icon />
+                <h4 className="!mt-3 text-xl font-semibold tracking-tight">
+                  {feature.title}
+                </h4>
+                <p className="mt-1 text-muted-foreground text-[17px]">
+                  {feature.description}
+                </p>
+              </CardHeader>
+              <CardContent className="mt-auto px-0 pb-0">
+                <div className="h-40 ml-6 rounded-tl-xl" >
+                  <Image src={feature.image} alt="" width={400} height={300}></Image>
                 </div>
-              </div>
-            </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
-                  98%
-                </p>
-                <p className="font-semibold text-primary">
-                  Customer Satisfaction
-                </p>
-                <p className="text-muted-foreground">From verified reviews</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
-                  3.8x
-                </p>
-                <p className="font-semibold text-primary">ROI Improvement</p>
-                <p className="text-muted-foreground">Within first quarter</p>
-              </div>
-            </div>
-          </div>
-          <Separator className="my-20" />
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="flex flex-col gap-10 border-border sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
-                alt="placeholder"
-                className="aspect-29/35 h-full w-full max-w-60 rounded-2xl object-cover"
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <q className="sm:text-xl">
-                  The interface is intuitive and customizable to our needs. We
-                  implemented it across departments with minimal training and
-                  saw immediate results.
-                </q>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-lg font-semibold text-primary">
-                      Sarah Chen
-                    </p>
-                    <p className="text-muted-foreground">Operations Lead</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
-                    alt="logo"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
-                  4.2x
-                </p>
-                <p className="font-semibold text-primary">Team Efficiency</p>
-                <p className="text-muted-foreground">
-                  Proven productivity gains
-                </p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-4xl font-medium text-primary sm:text-5xl">
-                  72%
-                </p>
-                <p className="font-semibold text-primary">Reduced Task Time</p>
-                <p className="text-muted-foreground">Across all projects</p>
-              </div>
-            </div>
-          </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
-
-export default Casestudies ;
+export default Products;

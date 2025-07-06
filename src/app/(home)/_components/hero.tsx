@@ -15,9 +15,7 @@ const HeroPage = () => {
           Layanan Publik 
         </h1>
         <p className="animate-fade-right animate-once mt-6 text-[17px] md:text-lg">
-          Explore a collection of Shadcn UI blocks and components, ready to
-          preview and copy. Streamline your development workflow with
-          easy-to-implement examples.
+          KEMUDAHAN & PELAYANAN PELINDUNGAN WNI
         </p>
       </div>
     </div>

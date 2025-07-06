@@ -7,30 +7,35 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 const features = [
   {
     icon: Goal,
     title: "Paspor Diplomatik dan Dinas",
     description:
       "Pelayanan pengurusan paspor diplomatik dan dinas untuk keperluan resmi pemerintah.",
+    image: "/services/passport.png"
   },
   {
     icon: BookCheck,
     title: "Exit Permit dan Rekomendasi Visa",
     description:
       "Proses pengajuan exit permit dan rekomendasi visa untuk perjalanan dinas ke luar negeri.",
+      image: "/services/visa.png"
   },
   {
     icon: ChartPie,
     title: "Legalisasi Dokumen",
     description:
       "Pelayanan legalisasi dokumen resmi untuk keperluan internasional dan administrasi.",
+      image: "/services/dokumen.png"
   },
   {
     icon: Users,
     title: "Safe Travel",
     description:
       "Layanan konsultasi dan informasi keamanan perjalanan untuk diplomat dan pejabat pemerintah.",
+      image: "/services/safe-travel.png"
   },
   
 ];
@@ -57,7 +62,9 @@ const ProductHomePage = () => {
                 </p>
               </CardHeader>
               <CardContent className="mt-auto px-0 pb-0">
-                <div className="bg-muted h-40 ml-6 rounded-tl-xl" />
+                <div className="h-40 ml-6 rounded-tl-xl" >
+                  <Image src={feature.image} alt="" width={400} height={300}></Image>
+                </div>
               </CardContent>
             </Card>
           ))}

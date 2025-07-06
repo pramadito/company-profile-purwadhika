@@ -31,22 +31,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
-        
-        
-
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-        <ReactQueryProvider>
-          <Navbar />
-          <div className="mt-26 " />
-          {children}
-        </ReactQueryProvider>
-        <Toaster  richColors position="top-right" />
+          <ReactQueryProvider>
+            <Navbar />
+            <div className="mt-26 " />
+            {children}
+          </ReactQueryProvider>
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
     </html>

@@ -1,7 +1,9 @@
+import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
 import { DribbbleIcon, TwitchIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 interface RandomUser {
   gender: string;
@@ -74,7 +76,9 @@ const Team05Page = async () => {
   const response = await fetch("https://randomuser.me/api/?results=20");
   const randomUser = await response.json();
   return (
+
     <div className="flex flex-col justify-center pb-8 sm:pb-12 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
+      
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
           Struktur Organisasi
@@ -86,7 +90,7 @@ const Team05Page = async () => {
           doloremque nulla odit nam.
         </p>
       </div>
-
+      <Suspense fallback={<Loading/>}>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
         {randomUser.results.map((user: RandomUser) => (
           <div key={`${user.name.first}-${user.name.last}`}>
@@ -134,6 +138,7 @@ const Team05Page = async () => {
           </div>
         ))}
       </div>
+      </Suspense>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Features02Page = () => {
     <div className="min-h-screen flex items-center justify-center py-12">
       <div className="w-full">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center">
-          Ignite Your Imagination
+          Tentang Kami
         </h2>
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 max-w-md sm:max-w-screen-md lg:max-w-screen-lg w-full mx-auto px-6">
           {features.map((feature) => (
