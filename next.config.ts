@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "deluxefarm-us.backendless.app",
       },
+      {
+        protocol: "https",
+        hostname: "company-profile-purwadhika.vercel.app",
+      },
       
     ],
   },
