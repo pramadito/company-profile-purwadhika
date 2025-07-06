@@ -71,7 +71,7 @@ interface RandomUserResponse {
 }
 
 const Team05Page = async () => {
-  const response = await fetch("https://randomuser.me/api/?results=20&gender=male");
+  const response = await fetch("https://randomuser.me/api/?results=20");
   const randomUser = await response.json();
   return (
     <div className="flex flex-col justify-center pb-8 sm:pb-12 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
@@ -97,7 +97,7 @@ const Team05Page = async () => {
               width={600}
               height={600}
             />
-            <h3 className="mt-4 text-lg font-semibold">{`${user.name.title} ${user.name.first} ${user.name.last}`}</h3>
+            <h3 className="mt-4 text-lg font-semibold">{`${user.name.first} ${user.name.last}`}</h3>
             <p className="text-muted-foreground text-sm">
               {user.email}
             </p>
