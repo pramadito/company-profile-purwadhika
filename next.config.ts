@@ -7,11 +7,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "deluxefarm-us.backendless.app",
+      },
+      {
+        protocol: "https",
         hostname: "images.pexels.com",
       },
     ],
   },
-
 };
 
 export default nextConfig;
