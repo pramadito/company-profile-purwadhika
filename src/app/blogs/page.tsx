@@ -1,5 +1,5 @@
-import BlogList from "../(home)/_components/BlogList";
-import Jumbotron from "../(home)/_components/Jumbotron";
+import BlogList from "./_components/BlogList";
+import Jumbotron from "./_components/Jumbotron";
 
 export default function Home() {
   return (

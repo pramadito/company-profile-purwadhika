@@ -3,6 +3,7 @@ import { NavMenu } from "./nav-menu";
 import { Logo } from "./logo";
 import { NavigationSheet } from "./navigation-sheet";
 import { ModeToggle } from "../mode-toggle";
+import { ProfileButton } from "./ProfileButton";
 const NavbarPage = () => {
   return (
     <div className="z-50">
@@ -14,6 +15,7 @@ const NavbarPage = () => {
           <NavMenu className="hidden md:block" />
           <div className="flex items-center gap-3">
             <ModeToggle/>
+            <ProfileButton/>
             {/* Mobile Menu */}
             <div className="md:hidden">
               <NavigationSheet />

@@ -63,6 +63,9 @@ const Write = () => {
         {({ setFieldValue }) => (
           <Form className="space-y-4">
             <div className="flex flex-col gap-6">
+              <h1 className="animate-rotate-y animate-once mt-6 text-xl sm:text-2xl md:text-2xl md:leading-[1.2] font-bold">
+                Buat Blog
+              </h1>
               {/*TITLE*/}
               <div className="grid gap-2">
                 <Label htmlFor="title">Title</Label>
