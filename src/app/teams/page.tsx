@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
 import { DribbbleIcon, TwitchIcon, TwitterIcon } from "lucide-react";
