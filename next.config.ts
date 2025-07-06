@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
       },
       
     ],
+    domains: [
+      'company-profile-purwadhika.vercel.app',
+    ]
   },
 };
 
