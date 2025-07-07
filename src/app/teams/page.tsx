@@ -94,8 +94,10 @@ const Team05Page = async () => {
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
           {randomUser.results.map((user: RandomUser) => (
             <div key={`${user.name.first}-${user.name.last}`}>
+              {/* IMAGE dari NEXT.JS broken buat getting API dari randomuser.me
+              sementara pakai img */}
               <img
-                src={user.picture.thumbnail}
+                src={user.picture.large}
                 alt={`${user.name.first} ${user.name.last}`}
                 className="w-full aspect-square rounded-lg object-cover bg-secondary"
                 width={600}
