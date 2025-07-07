@@ -78,9 +78,7 @@ const Team05Page = async () => {
   const response = await fetch("https://randomuser.me/api/?results=20");
   const randomUser = await response.json();
   return (
-
     <div className="flex flex-col justify-center pb-8 sm:pb-12 px-6 lg:px-8 max-w-screen-xl mx-auto gap-16">
-      
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
           Struktur Organisasi
@@ -92,54 +90,57 @@ const Team05Page = async () => {
           doloremque nulla odit nam.
         </p>
       </div>
-      <Suspense fallback={<Loading/>}>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-        {randomUser.results.map((user: RandomUser) => (
-          <div key={`${user.name.first}-${user.name.last}`}>
-            <Image
-              src={user.picture.large}
-              alt={`${user.name.first} ${user.name.last}`}
-              className="w-full aspect-square rounded-lg object-cover bg-secondary"
-              width={600}
-              height={600}
-            />
-            <h3 className="mt-4 text-lg font-semibold">{`${user.name.first} ${user.name.last}`}</h3>
-            <p className="text-muted-foreground text-sm">
-              {user.email}
-            </p>
-            <p className="mt-3 line-clamp-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis adipisci, laudantium tenetur illum expedita suscipit dicta magni inventore iusto ipsa vero pariatur voluptatibus debitis ad assumenda maxime ullam maiores aut.</p>
-            <div className="mt-4 flex items-center gap-2.5">
-              <Button
-                className="bg-accent hover:bg-accent text-muted-foreground shadow-none"
-                size="icon"
-                asChild
-              >
-                <Link href="#" target="_blank">
-                  <TwitterIcon className="stroke-muted-foreground" />
-                </Link>
-              </Button>
-              <Button
-                className="bg-muted hover:bg-muted text-muted-foreground shadow-none"
-                size="icon"
-                asChild
-              >
-                <Link href="#" target="_blank">
-                  <DribbbleIcon className="stroke-muted-foreground" />
-                </Link>
-              </Button>
-              <Button
-                className="bg-muted hover:bg-muted text-muted-foreground shadow-none"
-                size="icon"
-                asChild
-              >
-                <Link href="#" target="_blank">
-                  <TwitchIcon className="stroke-muted-foreground" />
-                </Link>
-              </Button>
+      <Suspense fallback={<Loading />}>
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+          {randomUser.results.map((user: RandomUser) => (
+            <div key={`${user.name.first}-${user.name.last}`}>
+              <Image
+                src={user.picture.thumbnail}
+                alt={`${user.name.first} ${user.name.last}`}
+                className="w-full aspect-square rounded-lg object-cover bg-secondary"
+                width={600}
+                height={600}
+              />
+              <h3 className="mt-4 text-lg font-semibold">{`${user.name.first} ${user.name.last}`}</h3>
+              <p className="text-muted-foreground text-sm">{user.email}</p>
+              <p className="mt-3 line-clamp-2">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Perspiciatis adipisci, laudantium tenetur illum expedita
+                suscipit dicta magni inventore iusto ipsa vero pariatur
+                voluptatibus debitis ad assumenda maxime ullam maiores aut.
+              </p>
+              <div className="mt-4 flex items-center gap-2.5">
+                <Button
+                  className="bg-accent hover:bg-accent text-muted-foreground shadow-none"
+                  size="icon"
+                  asChild
+                >
+                  <Link href="#" target="_blank">
+                    <TwitterIcon className="stroke-muted-foreground" />
+                  </Link>
+                </Button>
+                <Button
+                  className="bg-muted hover:bg-muted text-muted-foreground shadow-none"
+                  size="icon"
+                  asChild
+                >
+                  <Link href="#" target="_blank">
+                    <DribbbleIcon className="stroke-muted-foreground" />
+                  </Link>
+                </Button>
+                <Button
+                  className="bg-muted hover:bg-muted text-muted-foreground shadow-none"
+                  size="icon"
+                  asChild
+                >
+                  <Link href="#" target="_blank">
+                    <TwitchIcon className="stroke-muted-foreground" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </Suspense>
     </div>
   );
