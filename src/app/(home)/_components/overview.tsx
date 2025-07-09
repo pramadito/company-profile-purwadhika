@@ -1,49 +1,51 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+
 const overviews = [
   {
-    category: "Marketing and Sales",
-    title: "Collect and enrich leads your way",
+    category: "Pelayanan Diplomatik",
+    title: "Meningkatkan Kepentingan Indonesia di Dunia",
     details:
-      "Take control over how and when to follow up with your leads. Store and reference leads in multiple tables and, from there, automatically send them personalized emails.",
-    tutorialLink: "#",
+      "Memperkuat posisi Indonesia dalam hubungan internasional melalui diplomasi strategis, perjanjian bilateral, dan kerjasama multilateral. Kedutaan kami di seluruh dunia menjadi gerbang pertukaran budaya dan kemitraan ekonomi.",
+    tutorialLink: "https://kemlu.go.id/id/layanan",
   },
   {
-    category: "Project Management",
-    title: "Streamline your workflows effortlessly",
+    category: "Perlindungan Konsuler",
+    title: "Melindungi Warga Indonesia di Luar Negeri",
     details:
-      "Organize tasks, deadlines, and team collaboration in one place. Use customizable boards to manage projects efficiently and automate routine updates.",
-    tutorialLink: "#",
+      "Menyediakan layanan esensial dan perlindungan bagi WNI di luar negeri, termasuk layanan paspor, bantuan hukum, dan tanggap darurat dalam situasi krisis.",
+    tutorialLink: "https://kemlu.go.id/id/konsuler",
   },
   {
-    category: "Customer Support",
-    title: "Deliver seamless customer experiences",
+    category: "Diplomasi Ekonomi",
+    title: "Memperluas Peluang Perdagangan dan Investasi",
     details:
-      "Track and resolve customer queries faster with an integrated ticketing system. Set priorities, automate follow-ups, and enhance satisfaction with personalized responses.",
-    tutorialLink: "#",
+      "Memfasilitasi perjanjian perdagangan internasional dan mempromosikan ekspor Indonesia melalui diplomasi ekonomi. Kami menghubungkan pelaku usaha Indonesia dengan pasar dan investor global.",
+    tutorialLink: "https://kemlu.go.id/id/ekonomi",
   },
   {
-    category: "Team Collaboration",
-    title: "Stay connected with your team",
+    category: "Diplomasi Budaya",
+    title: "Memperkenalkan Warisan Budaya Indonesia ke Dunia",
     details:
-      "Simplify communication and align team efforts with shared boards and real-time updates. Enable transparent goal tracking and instant feedback for better results.",
-    tutorialLink: "#",
+      "Memperkenalkan keragaman budaya Indonesia yang kaya melalui acara internasional, pertukaran pendidikan, dan program seni untuk meningkatkan saling pengertian antar bangsa.",
+    tutorialLink: "https://kemlu.go.id/id/budaya",
   },
   {
-    category: "Product Development",
-    title: "Accelerate innovation with ease",
+    category: "Kemitraan Global",
+    title: "Membangun Aliansi Strategis Internasional",
     details:
-      "Bring your product ideas to life by managing prototypes, feedback, and iterations in one place. Collaborate with your team to refine features and release with confidence.",
-    tutorialLink: "#",
+      "Mengembangkan kemitraan komprehensif dengan negara dan organisasi internasional untuk mengatasi tantangan global dan meningkatkan peran Indonesia dalam urusan dunia.",
+    tutorialLink: "https://kemlu.go.id/id/kemitraan",
   },
 ];
+
 const OverviewPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-screen-lg w-full py-10 px-6">
         <h2 className="text-4xl md:text-5xl md:leading-[3.5rem] font-bold tracking-tight max-w-xl md:text-center md:mx-auto">
-          Who we are
+          Kementerian Luar Negeri Republik Indonesia
         </h2>
         <div className="mt-8 md:mt-16 w-full mx-auto space-y-20">
           {overviews.map((overview) => (
@@ -66,8 +68,8 @@ const OverviewPage = () => {
                   asChild
                   className="mt-6 rounded-full min-w-40 text-[15px]"
                 >
-                  <Link href={overview.tutorialLink}>
-                    Learn More <ArrowRight />
+                  <Link href={overview.tutorialLink} target="_blank">
+                    Pelajari Selengkapnya <ArrowRight />
                   </Link>
                 </Button>
               </div>
@@ -78,4 +80,5 @@ const OverviewPage = () => {
     </div>
   );
 };
+
 export default OverviewPage;

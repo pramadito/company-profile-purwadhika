@@ -14,65 +14,63 @@ import { useEffect, useState } from "react";
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
-    company: "TechCorp",
+    name: "Dr. Retno Marsudi",
+    designation: "Menteri Luar Negeri",
+    company: "Kemlu RI",
     testimonial:
-      "This product has completely transformed the way we work. The efficiency and ease of use are unmatched! " +
-      "We were struggling with productivity before, but this tool has streamlined our entire process. ",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+      "Pelayanan Kementerian Luar Negeri terus berkomitmen untuk melindungi WNI di luar negeri dan memperjuangkan kepentingan nasional di forum internasional. " +
+      "Kami bangga dengan dedikasi seluruh staf diplomatik yang bekerja tanpa lelah untuk membawa nama baik Indonesia di kancah global.",
+    avatar: "",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    designation: "Product Manager",
-    company: "InnovateX",
+    name: "Prof. Hasan Kleib",
+    designation: "Duta Besar RI untuk PBB",
+    company: "PTRI New York",
     testimonial:
-      "An amazing tool that simplifies complex tasks. Highly recommended for professionals in the industry. " +
-      "The intuitive interface makes it easy to onboard new team members, and the automation features save us countless hours every week. ",
-    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+      "Diplomasi Indonesia di PBB semakin diperhitungkan. Kami berhasil memperjuangkan berbagai isu strategis mulai dari perdamaian dunia hingga pembangunan berkelanjutan. " +
+      "Ini adalah bukti nyata kontribusi aktif Indonesia dalam tata kelola global.",
+    avatar: "",
   },
   {
     id: 3,
-    name: "Michael Johnson",
-    designation: "UX Designer",
-    company: "DesignPro",
+    name: "I Gusti Agung Wesaka Puja",
+    designation: "Dirjen Protokol dan Konsuler",
+    company: "Kemlu RI",
     testimonial:
-      "The user experience is top-notch! The interface is clean, intuitive, and easy to navigate. " +
-      "As a designer, I appreciate the attention to detail and well-thought-out UI components. " +
-      "It makes designing and prototyping so much more efficient.",
-    avatar: "https://randomuser.me/api/portraits/men/3.jpg",
+      "Layanan konsuler kami terus ditingkatkan untuk memenuhi kebutuhan WNI di luar negeri. " +
+      "Dari penerbitan paspor hingga evakuasi darurat, tim kami siap memberikan pelayanan terbaik dengan prinsip 'Pelayanan Publik yang Prima'.",
+    avatar: "",
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "Marketing Specialist",
-    company: "BrandBoost",
+    name: "Siti Nugraha Mauludiah",
+    designation: "Direktur Diplomasi Ekonomi",
+    company: "Kemlu RI",
     testimonial:
-      "I've seen a significant improvement in our team's productivity since we started using this service. " +
-      "The ability to track performance, analyze data, and collaborate across teams has been a game-changer.",
-    avatar: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Diplomasi ekonomi telah membuka banyak peluang bagi produk Indonesia di pasar global. " +
+      "Kami terus bekerja sama dengan kementerian terkait untuk mempromosikan produk unggulan Indonesia dan menarik investasi asing.",
+    avatar: "",
   },
   {
     id: 5,
-    name: "Daniel Martinez",
-    designation: "Full-Stack Developer",
-    company: "CodeCrafters",
+    name: "Andri Hadi",
+    designation: "Duta Besar RI untuk Prancis",
+    company: "KBRI Paris",
     testimonial:
-      "The best investment we've made! The support team is also super responsive and helpful. " +
-      "As a developer, I appreciate the well-documented API, the flexibility of integrations, and the robust security features.",
-    avatar: "https://randomuser.me/api/portraits/men/5.jpg",
+      "Melalui diplomasi budaya, kami berhasil memperkenalkan kekayaan seni dan budaya Indonesia ke Eropa. " +
+      "Pameran budaya, pertunjukan seni, dan pertukaran pelajar menjadi sarana efektif untuk memperkuat people-to-people contact.",
+    avatar: "",
   },
   {
     id: 6,
-    name: "Sophia Lee",
-    designation: "Data Analyst",
-    company: "InsightTech",
+    name: "Michael Tene",
+    designation: "Wakil Sekretaris Jenderal ASEAN",
+    company: "Sekretariat ASEAN",
     testimonial:
-      "This tool has saved me hours of work! The analytics and reporting features are incredibly powerful. " +
-      "I can now generate detailed reports in minutes, which previously took days to compile. " +
-      "helping us make smarter, data-backed decisions.",
-    avatar: "https://randomuser.me/api/portraits/women/6.jpg",
+      "Indonesia memainkan peran kunci dalam berbagai inisiatif ASEAN. " +
+      "Kepemimpinan Indonesia di kawasan ini sangat dihargai oleh negara-negara anggota ASEAN dan mitra dialog.",
+    avatar: "",
   },
 ];
 const TestimonialHomeComponents = () => {
