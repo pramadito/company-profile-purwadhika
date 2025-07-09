@@ -9,11 +9,9 @@ import Image from "next/image";
 
 import GoogleMapComponent from "./google-map";
 
-
 import Link from "next/link";
 import { Suspense } from "react";
 const AboutUsHomeComponents = () => {
-
   return (
     <div className="container mx-auto px-8">
       <div className=" flex items-center justify-center py-16">
@@ -36,9 +34,9 @@ const AboutUsHomeComponents = () => {
                 </p>
                 <Link
                   className="font-medium text-primary"
-                  href="mailto:akashmoradiya3444@gmail.com"
+                  href="mailto:kontak-kami@kemlu.go.id"
                 >
-                  akashmoradiya3444@gmail.com
+                  kontak-kami@kemlu.go.id
                 </Link>
               </div>
               <div>
@@ -63,10 +61,11 @@ const AboutUsHomeComponents = () => {
                 </p>
                 <Link
                   className="font-medium text-primary"
-                  href="https://map.google.com"
+                  href="https://www.google.com/maps/place/6%C2%B010'33.5%22S+106%C2%B049'54.0%22E/@-6.175959,106.831652,12z/data=!4m4!3m3!8m2!3d-6.1759722!4d106.8316667?hl=en&entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                 >
-                  100 Smith Street Collingwood <br /> VIC 3066 AU
+                  Jl. Taman Pejambon No. 6 <br /> Jakarta Pusat, 10110,
+                  Indonesia
                 </Link>
               </div>
               <div>
@@ -79,17 +78,16 @@ const AboutUsHomeComponents = () => {
                 </p>
                 <Link
                   className="font-medium text-primary"
-                  href="tel:akashmoradiya3444@gmail.com"
+                  href="tel:(+62 21) 344 1508"
                 >
-                  +1 (555) 000-0000
+                  (+62 21) 344 1508
                 </Link>
               </div>
             </div>
             {/* Form */}
             <div>
-<GoogleMapComponent></GoogleMapComponent>
+              <GoogleMapComponent></GoogleMapComponent>
             </div>
-            
           </div>
         </div>
       </div>
