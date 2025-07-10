@@ -147,14 +147,7 @@ const AboutPage = () => {
                       {question}
                     </div>
                     <p className="text-muted-foreground">{answer}</p>
-                    {image && (
-                      <img 
-                        src={image} 
-                        alt={alt}
-                        className="mt-4 rounded-lg w-full h-auto max-h-40 object-cover"
-                        loading="lazy"
-                      />
-                    )}
+                  
                   </div>
                 </div>
               </div>
