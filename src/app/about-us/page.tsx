@@ -28,19 +28,19 @@ const AboutPage = () => {
     {
       title: "Nilai Inti",
       description: "Integritas, Inovasi, Kolaborasi, dan Tanggung Jawab Sosial menjadi pondasi setiap langkah kami.",
-      image: "/tentang-kami/visi-global-diplomasi.webp",
+      image: "/tentang-kami/nilai-tanggungjawab-sosial.webp",
       alt: "Nilai Integritas Diplomat"
     },
     {
       title: "Sejarah",
       description: "Berdiri sejak 2010, kami telah berkembang dari tim kecil menjadi organisasi nasional yang diakui.",
-      image: "/tentang-kami/visi-global-diplomasi.webp",
+      image: "/tentang-kami/sejarah-diplomasi-kemerdekaan.webp",
       alt: "Sejarah Kementerian Luar Negeri"
     },
     {
       title: "Tim Kami",
       description: "Didukung oleh profesional berpengalaman dari berbagai disiplin ilmu yang berdedikasi tinggi.",
-      image: "/tentang-kami/visi-global-diplomasi.webp",
+      image: "/tentang-kami/tim-diplomat-kemlu.webp",
       alt: "Tim Diplomat Kemlu 2024"
     },
     {
