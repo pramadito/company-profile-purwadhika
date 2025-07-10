@@ -20,7 +20,7 @@ import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required("Email is required").email(),
-  password: Yup.string().required("Password is required").min(8),
+  password: Yup.string().required("Password is required").min(6),
 });
 
 const SignIn = () => {

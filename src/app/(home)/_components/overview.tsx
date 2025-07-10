@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const overviews = [
@@ -9,6 +10,8 @@ const overviews = [
     details:
       "Memperkuat posisi Indonesia dalam hubungan internasional melalui diplomasi strategis, perjanjian bilateral, dan kerjasama multilateral. Kedutaan kami di seluruh dunia menjadi gerbang pertukaran budaya dan kemitraan ekonomi.",
     tutorialLink: "https://kemlu.go.id/id/layanan",
+    image: "/overview/Pelayanan_Diplomatik.webp",
+    alt: "Pertemuan Menteri Luar Negeri RI dengan Senator Amerika Serikat"
   },
   {
     category: "Perlindungan Konsuler",
@@ -16,6 +19,8 @@ const overviews = [
     details:
       "Menyediakan layanan esensial dan perlindungan bagi WNI di luar negeri, termasuk layanan paspor, bantuan hukum, dan tanggap darurat dalam situasi krisis.",
     tutorialLink: "https://kemlu.go.id/id/konsuler",
+    image: "/overview/Perlindungan_Konsuler.webp",
+    alt: "Pelayanan konsuler untuk WNI di luar negeri"
   },
   {
     category: "Diplomasi Ekonomi",
@@ -23,6 +28,8 @@ const overviews = [
     details:
       "Memfasilitasi perjanjian perdagangan internasional dan mempromosikan ekspor Indonesia melalui diplomasi ekonomi. Kami menghubungkan pelaku usaha Indonesia dengan pasar dan investor global.",
     tutorialLink: "https://kemlu.go.id/id/ekonomi",
+    image: "/overview/Diplomasi_Ekonomi.webp",
+    alt: "Pertemuan bisnis dan ekonomi internasional"
   },
   {
     category: "Diplomasi Budaya",
@@ -30,6 +37,8 @@ const overviews = [
     details:
       "Memperkenalkan keragaman budaya Indonesia yang kaya melalui acara internasional, pertukaran pendidikan, dan program seni untuk meningkatkan saling pengertian antar bangsa.",
     tutorialLink: "https://kemlu.go.id/id/budaya",
+    image: "/overview/Diplomasi_Budaya.webp",
+    alt: "Pertunjukan budaya Indonesia di luar negeri"
   },
   {
     category: "Kemitraan Global",
@@ -37,6 +46,8 @@ const overviews = [
     details:
       "Mengembangkan kemitraan komprehensif dengan negara dan organisasi internasional untuk mengatasi tantangan global dan meningkatkan peran Indonesia dalam urusan dunia.",
     tutorialLink: "https://kemlu.go.id/id/kemitraan",
+    image: "/overview/Kemitraan_Global.webp",
+    alt: "Penandatanganan kerjasama internasional"
   },
 ];
 
@@ -53,7 +64,14 @@ const OverviewPage = () => {
               key={overview.category}
               className="flex flex-col md:flex-row items-center gap-x-20 gap-y-6 md:odd:flex-row-reverse"
             >
-              <div className="w-full aspect-[6/4] bg-muted rounded-xl border border-border/50 basis-1/2" />
+              <div className="w-full aspect-[6/4] rounded-xl border border-border/50 basis-1/2 relative overflow-hidden">
+                <Image 
+                  src={overview.image} 
+                  alt={overview.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="basis-1/2 shrink-0">
                 <span className="uppercase font-semibold text-sm text-muted-foreground">
                   {overview.category}
@@ -69,7 +87,7 @@ const OverviewPage = () => {
                   className="mt-6 rounded-full min-w-40 text-[15px]"
                 >
                   <Link href={overview.tutorialLink} target="_blank">
-                    Pelajari Selengkapnya <ArrowRight />
+                    Pelajari Selengkapnya <ArrowRight className="ml-2" size={16} />
                   </Link>
                 </Button>
               </div>

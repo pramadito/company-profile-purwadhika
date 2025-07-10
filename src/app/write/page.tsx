@@ -46,7 +46,7 @@ const Write = () => {
   const { mutateAsync: createBlog, isPending } = useCreateBlog();
 
   return (
-    <main className="cointainer mx-auto px-4 pb-20">
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
       <Formik
         initialValues={{
           title: "",
@@ -61,9 +61,9 @@ const Write = () => {
         }}
       >
         {({ setFieldValue }) => (
-          <Form className="space-y-4">
+          <Form className="space-y-6">
             <div className="flex flex-col gap-6">
-              <h1 className="animate-rotate-y animate-once mt-6 text-xl sm:text-2xl md:text-2xl md:leading-[1.2] font-bold">
+              <h1 className="animate-rotate-y animate-once text-2xl sm:text-3xl font-bold">
                 Buat Blog
               </h1>
               {/*TITLE*/}
@@ -103,8 +103,8 @@ const Write = () => {
                   name="description"
                   as={Textarea}
                   placeholder="Description"
-                  rows={5} // Add this line to set the number of visible rows
-                  className="min-h-[200px]" // Optional: set minimum height
+                  rows={5}
+                  className="min-h-[200px]"
                   style={{ resize: "none" }}
                 />
                 <ErrorMessage
@@ -123,14 +123,14 @@ const Write = () => {
                     alt="thumbnail"
                     width={200}
                     height={150}
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                   />
                   <Button
                     size="icon"
-                    className="absolute -top-2 -right-2 rounded-full bg-red-500"
+                    className="absolute -top-2 -right-2 rounded-full bg-red-500 hover:bg-red-600"
                     onClick={() => removeThumbnail(setFieldValue)}
                   >
-                    <Trash />
+                    <Trash className="w-4 h-4" />
                   </Button>
                 </div>
               ) : (
