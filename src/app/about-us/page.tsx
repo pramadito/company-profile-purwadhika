@@ -1,33 +1,105 @@
-const features = [
-  {
-    title: "Identify Opportunities",
-    description: "Find untapped areas to explore effortlessly.",
-  },
-  {
-    title: "Build Authority",
-    description: "Craft content that resonates and inspires trust.",
-  },
-  {
-    title: "Instant Insights",
-    description: "Get actionable insights instantly at a glance.",
-  },
-];
+import {
+  BadgeDollarSign,
+  Route,
+  ShieldCheck,
+  Truck,
+  Undo2,
+  UserRoundCheck,
+  Globe,
+  FileText,
+  Home,
+  Phone,
+} from "lucide-react";
 
-const Features02Page = () => {
+const AboutPage = () => {
+   const features = [
+    {
+      title: "Visi Kami",
+      description: "Menjadi pionir dalam memberikan solusi inovatif yang berdampak positif bagi masyarakat dan lingkungan.",
+    },
+    {
+      title: "Misi Kami",
+      description: "Memberikan pelayanan terbaik melalui inovasi berkelanjutan, kolaborasi strategis, dan komitmen pada kualitas.",
+    },
+    {
+      title: "Nilai Inti",
+      description: "Integritas, Inovasi, Kolaborasi, dan Tanggung Jawab Sosial menjadi pondasi setiap langkah kami.",
+    },
+    {
+      title: "Sejarah",
+      description: "Berdiri sejak 2010, kami telah berkembang dari tim kecil menjadi organisasi nasional yang diakui.",
+    },
+    {
+      title: "Tim Kami",
+      description: "Didukung oleh profesional berpengalaman dari berbagai disiplin ilmu yang berdedikasi tinggi.",
+    },
+    {
+      title: "Pencapaian",
+      description: "Meraih berbagai penghargaan industri dan pengakuan atas kontribusi kami di bidang ini.",
+    },
+  ];
+
+  const kemluFaq = [
+    {
+      icon: Globe,
+      question: "Apa saja layanan Kementerian Luar Negeri?",
+      answer:
+        "Kemlu menyediakan layanan konsuler, penerbitan paspor, informasi visa, dan bantuan untuk WNI di luar negeri.",
+    },
+    {
+      icon: FileText,
+      question: "Bagaimana cara melapor jika paspor hilang di luar negeri?",
+      answer:
+        "Segera hubungi Perwakilan RI terdekat dan laporkan ke polisi setempat untuk mendapatkan surat keterangan kehilangan.",
+    },
+    {
+      icon: Route,
+      question: "Bagaimana cara melacak pengajuan paspor saya?",
+      answer:
+        "Lacak pengajuan paspor melalui sistem online kami menggunakan ID aplikasi yang diberikan saat pengajuan.",
+    },
+    {
+      icon: Home,
+      question: "Apa yang harus dilakukan WNI dalam situasi darurat di luar negeri?",
+      answer:
+        "Hubungi segera Perwakilan RI terdekat atau nomor darurat Kemlu +62 811 192 191 untuk mendapatkan bantuan.",
+    },
+    {
+      icon: ShieldCheck,
+      question: "Bagaimana Kemlu melindungi WNI di luar negeri?",
+      answer:
+        "Kemlu memberikan perlindungan melalui Perwakilan RI, termasuk bantuan hukum, evakuasi, dan pendampingan kasus.",
+    },
+    {
+      icon: Phone,
+      question: "Bagaimana cara menghubungi Kemlu untuk pertanyaan konsuler?",
+      answer:
+        "Hubungi Pusat Panggilan Kemlu di 1500-131 atau email ke poskotri@kemlu.go.id untuk informasi konsuler.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center py-12">
+    <div className="space-y-20 py-12">
+      {/* Tentang Kami Section */}
+     <div className="min-h-screen flex items-center justify-center py-12">
       <div className="w-full">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-center">
           Tentang Kami
         </h2>
+        <p className="mt-4 text-lg text-center text-muted-foreground max-w-2xl mx-auto">
+          Mengenal lebih dalam visi, misi, dan nilai-nilai yang menjadi dasar setiap karya kami.
+        </p>
+        
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 max-w-md sm:max-w-screen-md lg:max-w-screen-lg w-full mx-auto px-6">
           {features.map((feature) => (
             <div key={feature.title} className="flex flex-col text-start">
-              <div className="mb-5 sm:mb-6 w-full aspect-[4/5] bg-muted rounded-xl" />
+              <div className="mb-5 sm:mb-6 w-full aspect-[4/3] bg-muted rounded-xl flex items-center justify-center">
+                <span className="text-4xl">📌</span> {/* Placeholder for icon */}
+              </div>
               <span className="text-2xl font-semibold tracking-tight">
                 {feature.title}
               </span>
-              <p className="mt-2 max-w-[25ch] text-muted-foreground text-[17px]">
+              <p className="mt-2 text-muted-foreground text-[17px]">
                 {feature.description}
               </p>
             </div>
@@ -35,7 +107,34 @@ const Features02Page = () => {
         </div>
       </div>
     </div>
+
+      {/* Kemlu FAQ Section */}
+      <div className="min-h-[50vh] flex items-center justify-center px-6">
+        <div className="max-w-screen-lg w-full">
+          <h2 className="text-4xl md:text-5xl !leading-[1.15] font-bold tracking-tight text-center">
+            Layanan Kementerian Luar Negeri
+          </h2>
+          <p className="mt-3 text-lg text-center text-muted-foreground">
+            Informasi penting tentang layanan konsuler dan perlindungan WNI.
+          </p>
+
+          <div className="mt-12 grid md:grid-cols-2 rounded-xl gap-4">
+            {kemluFaq.map(({ question, answer, icon: Icon }) => (
+              <div key={question} className="border p-6 rounded-xl hover:shadow-md transition-shadow">
+                <div className="h-10 w-10 flex items-center justify-center rounded-full bg-accent">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="mt-5 mb-2 flex items-start gap-2 text-[1.35rem] font-semibold tracking-tight">
+                  <span>{question}</span>
+                </div>
+                <p className="text-muted-foreground">{answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default Features02Page;
+export default AboutPage;
