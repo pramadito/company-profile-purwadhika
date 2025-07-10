@@ -46,7 +46,7 @@ const AboutPage = () => {
     {
       title: "Pencapaian",
       description: "Meraih berbagai penghargaan industri dan pengakuan atas kontribusi kami di bidang ini.",
-      image: "/tentang-kami/visi-global-diplomasi.webp",
+      image: "/tentang-kami/pencapaian-perjanjian.webp",
       alt: "Pencapaian Penghargaan ASEAN 2023"
     },
   ];
