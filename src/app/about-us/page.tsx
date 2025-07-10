@@ -136,7 +136,7 @@ const AboutPage = () => {
           </p>
 
           <div className="mt-12 grid md:grid-cols-2 rounded-xl gap-4">
-            {kemluFaq.map(({ question, answer, icon: Icon, image, alt }) => (
+            {kemluFaq.map(({ question, answer, icon: Icon }) => (
               <div key={question} className="border p-6 rounded-xl hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-full bg-accent">
