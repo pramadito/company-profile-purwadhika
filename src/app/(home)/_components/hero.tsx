@@ -9,7 +9,7 @@ const HeroPage = () => {
       
       <div className="text-center  max-w-2xl">
         <div className="flex items-center justify-center">
-        <Image src="logo.svg" alt="" height={400} width={300}/>
+        <Image src="logo.svg" alt="" height={400} width={300} className="aspect-auto"/>
         </div>
         <h1 className="animate-rotate-y animate-once mt-6 text-4xl sm:text-5xl md:text-6xl md:leading-[1.2] font-bold">
           Layanan Publik 

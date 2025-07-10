@@ -18,6 +18,7 @@ import {
 import { useAuthStore } from "@/stores/stores";
 import { User } from "lucide-react";
 import Link from "next/link";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export function ProfileButton() {
   const { user, clearAuth } = useAuthStore();
@@ -25,8 +26,13 @@ export function ProfileButton() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          <User />
-        </Button>
+          
+            <User className="h-4 w-4" />
+            <span className="hidden sm:inline ml-2">Profile</span>
+            <span className="sr-only">Profile menu</span>
+            {/* Tailwind's screen-reader-only */}
+          </Button>
+        
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="start">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
