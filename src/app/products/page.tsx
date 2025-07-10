@@ -8,6 +8,7 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+
 const features = [
   {
     icon: Goal,
@@ -37,8 +38,8 @@ const features = [
       "Layanan konsultasi dan informasi keamanan perjalanan untuk diplomat dan pejabat pemerintah.",
       image: "/services/safe-travel.png"
   },
-  
 ];
+
 const Products = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -50,10 +51,11 @@ const Products = () => {
           {features.map((feature) => (
             <Card
               key={feature.title}
-              className="flex flex-col border rounded-xl overflow-hidden shadow-none"
+              className="flex flex-col border rounded-xl overflow-hidden shadow-none 
+              transition-all duration-300 hover:shadow-[0_0_15px_5px_rgba(168,85,247,0.5)] hover:border-purple-400 hover:scale-[1.02]"
             >
               <CardHeader>
-                <feature.icon />
+                <feature.icon className="text-purple-600" />
                 <h4 className="!mt-3 text-xl font-semibold tracking-tight">
                   {feature.title}
                 </h4>
@@ -61,9 +63,20 @@ const Products = () => {
                   {feature.description}
                 </p>
               </CardHeader>
-              <CardContent className="mt-auto px-0 pb-0">
-                <div className="h-40 ml-6 rounded-tl-xl" >
-                  <Image src={feature.image} alt="" width={400} height={300}></Image>
+              <CardContent className="mt-auto p-0">
+                <div className="h-40 w-full relative">
+                  <Image 
+                    src={feature.image} 
+                    alt={feature.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="p-6 pt-0">
+                  <button className="w-full mt-4 py-2 bg-purple-600 text-white font-medium rounded-lg
+                  hover:bg-purple-700 transition-colors duration-300 hover:shadow-[0_0_10px_2px_rgba(168,85,247,0.7)]">
+                    Selengkapnya
+                  </button>
                 </div>
               </CardContent>
             </Card>
@@ -73,4 +86,5 @@ const Products = () => {
     </div>
   );
 };
+
 export default Products;
