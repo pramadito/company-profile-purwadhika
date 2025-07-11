@@ -12,9 +12,8 @@ const HeroPage = () => {
         <Image src="logo.svg" alt="" height={400} width={300} className="aspect-auto"/>
         </div>
         <h1 className="animate-rotate-y animate-once mt-6 text-4xl sm:text-5xl md:text-6xl md:leading-[1.2] font-bold">
-          Layanan Publik 
         </h1>
-        <p className="animate-fade-right animate-once mt-6 text-[17px] md:text-lg">
+        <p className="animate-fade-right animate-once mt-6 text-[17px] md:text-lg px-4 py-2">
           KEMUDAHAN & PELAYANAN PELINDUNGAN WNI
         </p>
       </div>
